@@ -1,0 +1,50 @@
+VulnPorts Agent – Acuerdo de Licencia de Usuario Final (EULA)
+
+IMPORTANTE: LEA ESTE ACUERDO DETENIDAMENTE ANTES DE INSTALAR O UTILIZAR EL SOFTWARE.
+
+Este Acuerdo de Licencia de Usuario Final (“Acuerdo”) es un contrato legal entre el Usuario
+(“usted”) y el propietario autorizado del software VulnPorts Agent (“el Software”).
+Al instalar, copiar o utilizar el Software, usted acepta quedar legalmente vinculado por
+los términos de este Acuerdo. Si no está de acuerdo, no instale ni utilice el Software.
+
+1. CONCESIÓN DE LICENCIA
+El Software se otorga bajo una licencia limitada, no exclusiva y no transferible, para
+ser utilizado únicamente en el equipo donde se instale y exclusivamente para fines
+de monitoreo, análisis y gestión de seguridad dentro del sistema VulnPorts.
+
+2. FUNCIONALIDAD Y ALCANCE
+El Software recopila y envía información técnica del equipo, incluyendo puertos,
+procesos, servicios y otra información operativa requerida para el funcionamiento del
+sistema VulnPorts. El uso del Software implica su consentimiento para el envío y
+procesamiento de dichos datos por el servidor configurado.
+
+3. RESTRICCIONES
+Usted no puede:
+ • Modificar, descompilar o realizar ingeniería inversa del Software.
+ • Distribuir, revender o sublicenciar el Software sin autorización previa.
+ • Utilizar el Software con fines malintencionados o fuera del alcance previsto.
+
+4. DERECHOS DE PROPIEDAD INTELECTUAL
+El Software, su código, documentación y componentes asociados son propiedad
+intelectual del desarrollador y se encuentran protegidos por leyes de derechos de autor
+y tratados internacionales.
+
+5. LIMITACIÓN DE RESPONSABILIDAD
+El Software se proporciona “TAL CUAL”. El desarrollador no garantiza que el Software
+sea libre de errores o interrupciones. En ningún caso el desarrollador será responsable
+de daños directos, indirectos, incidentales o consecuentes derivados del uso o la
+imposibilidad de uso del Software.
+
+6. ACTUALIZACIONES Y CAMBIOS
+El desarrollador puede proporcionar actualizaciones o mejoras del Software. Dichas
+actualizaciones estarán sujetas a los términos de este Acuerdo, salvo que se indique
+lo contrario.
+
+7. TERMINACIÓN
+Este Acuerdo permanecerá vigente hasta su terminación. Usted puede terminarlo
+desinstalando el Software. El desarrollador puede terminar el Acuerdo en caso de
+incumplimiento. Al finalizar, usted debe eliminar todas las copias del Software.
+
+8. ACEPTACIÓN
+Al proceder con la instalación, usted reconoce haber leído, comprendido y aceptado
+los términos de este Acuerdo.

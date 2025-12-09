@@ -1,0 +1,7 @@
+﻿agent_id: "HOST-PRUEBA"
+api_url: "http://localhost:8000/api/v1/agent"
+interval: 60
+log_file: "C:\\ProgramData\\VulnPortsAgent\\agent.log"
+log_level: "info"
+api_key: ""
+
