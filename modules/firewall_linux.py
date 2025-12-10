@@ -17,7 +17,7 @@ def find_pid_by_port_linux(port):
 def close_port_linux(port):
     log.info(f"[LINUX] Intentando cerrar puerto {port}...")
 
-    # 1️⃣ Encontrar PID
+    # Encontrar PID
     pid = find_pid_by_port_linux(port)
 
     if not pid:
@@ -26,7 +26,7 @@ def close_port_linux(port):
 
     log.info(f"[LINUX] Puerto {port} está asociado al PID {pid}. Terminando proceso...")
 
-    # 2️⃣ Matar proceso
+    # 2Matar proceso
     try:
         subprocess.run(["sudo", "kill", "-9", str(pid)], check=True)
         log.info(f"[LINUX] Proceso {pid} eliminado. Puerto {port} cerrado.")
@@ -34,7 +34,7 @@ def close_port_linux(port):
         log.error(f"[LINUX] Error al matar el proceso {pid}: {e}")
         return False
 
-    # 3️⃣ Reglas iptables (opcional)
+    # Reglas iptables (opcional)
     try:
         subprocess.run(
             ["sudo", "iptables", "-A", "INPUT", "-p", "tcp", "--dport", str(port), "-j", "DROP"],
