@@ -23,7 +23,7 @@ def close_port_windows(port):
     """
     log.info(f"[FIREWALL] Intentando cerrar puerto {port}...")
 
-    # 1. Buscar PID asociado
+    # Buscar PID asociado
     pid = find_pid_by_port(port)
     if not pid:
         log.warning(f"[FIREWALL] No se encontró proceso asociado al puerto {port}")
@@ -31,7 +31,7 @@ def close_port_windows(port):
 
     log.info(f"[FIREWALL] Puerto {port} está asociado al PID {pid}. Terminando proceso...")
 
-    # 2. Matar proceso (cierre real del puerto)
+    # Matar proceso (cierre real del puerto)
     try:
         subprocess.run(["taskkill", "/PID", str(pid), "/F"], check=True)
         log.info(f"[FIREWALL] Proceso {pid} terminado correctamente. Puerto {port} cerrado.")
@@ -39,7 +39,7 @@ def close_port_windows(port):
         log.error(f"[FIREWALL] Error al terminar proceso {pid}: {e}")
         return False
 
-    # 3. Opcional: agregar regla de firewall para evitar que vuelva a abrirse
+    # Agregar regla de firewall para evitar que vuelva a abrirse
     try:
         subprocess.run(
             [

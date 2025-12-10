@@ -7,10 +7,7 @@ from pathlib import Path
 
 class AgentConfig:
     def __init__(self):
-        # ============================================================
         # Localización del config.yaml
-        # ============================================================
-
         # Permite override desde variable de entorno
         env_path = os.environ.get("VULNPORTS_CONFIG_PATH")
         if env_path:
@@ -29,25 +26,20 @@ class AgentConfig:
         if not config_path.exists():
             raise FileNotFoundError(f"[CONFIG ERROR] Archivo no encontrado: {config_path}")
 
-        # ============================================================
         # Cargar YAML correctamente
-        # ============================================================
         try:
             with open(config_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
         except Exception as e:
             raise ValueError(f"[CONFIG ERROR] No se pudo leer config.yaml → {e}")
 
-        # ============================================================
         # Validar y asignar parámetros
-        # ============================================================
-
         # Agent ID
         self.agent_id = str(data.get("agent_id", "")).strip()
         if not self.agent_id:
             raise ValueError("[CONFIG ERROR] 'agent_id' no puede estar vacío.")
 
-        # API URL (sin slash final)
+        # API URL 
         self.api_url = str(data.get("api_url", "")).strip()
         if not self.api_url or not self.api_url.startswith("http"):
             raise ValueError("[CONFIG ERROR] api_url inválida o ausente en config.yaml")
@@ -55,19 +47,17 @@ class AgentConfig:
         if self.api_url.endswith("/"):
             self.api_url = self.api_url[:-1]
 
-        # Intervalo
+        # Intervalo de escaneo y reporte
         self.interval = int(data.get("interval", 60))
 
         # Logging
         self.log_file = data.get("log_file", "C:\\ProgramData\\VulnPortsAgent\\agent.log")
         self.log_level = data.get("log_level", "info").lower()
 
-        # API KEY (opcional — la completa el backend después del registro)
+        # API KEY (si no se proporciona, se registra y luego se actualiza)
         self.api_key = data.get("api_key")
 
-        # ============================================================
         # Detectar OS real
-        # ============================================================
         system = platform.system().lower()
 
         if "windows" in system:

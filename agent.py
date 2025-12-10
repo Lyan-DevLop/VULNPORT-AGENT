@@ -41,9 +41,7 @@ def main():
     system_info = get_system_info()
     log.info(f"[DEBUG] System info loaded: {system_info}")
 
-    # =========================================================
     # REGISTRO DEL AGENTE (reintenta hasta lograrlo)
-    # =========================================================
     while True:
         payload = {
             "agent_id": config.agent_id,
@@ -64,9 +62,7 @@ def main():
         log.error("[REGISTER] Failed to register agent. Retrying in 5 seconds...")
         time.sleep(5)
 
-    # =========================================================
     # BUCLE PRINCIPAL
-    # =========================================================
     while True:
         ports = scan_open_ports()
 

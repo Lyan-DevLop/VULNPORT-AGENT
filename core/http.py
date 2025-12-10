@@ -3,7 +3,7 @@ from core.config import config
 from core.logger import log
 from core.system_info import get_real_ip
 
-
+# Función para enviar solicitudes HTTP
 def send_request(method, endpoint, json=None):
     url = f"{config.api_url}{endpoint}"
 
@@ -14,9 +14,7 @@ def send_request(method, endpoint, json=None):
     if getattr(config, "api_key", None):
         headers["X-API-Key"] = config.api_key
 
-    # ============================================================
     # Añadir ip_address al reporte SOLO si no se envió antes
-    # ============================================================
     if endpoint.endswith("/report"):
         if json is None:
             json = {}
@@ -42,9 +40,9 @@ def send_request(method, endpoint, json=None):
         try:
             return response.json()
         except ValueError:
-            log.warning("⚠ Respuesta sin JSON válido.")
+            log.warning("Respuesta sin JSON válido.")
             return None
 
     except Exception as e:
-        log.error(f"🚨 Error HTTP: {e}")
+        log.error(f"Error HTTP: {e}")
         return None
